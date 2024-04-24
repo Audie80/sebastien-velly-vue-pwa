@@ -1,7 +1,7 @@
 <template>
   <header>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <h1>Sébastien Velly</h1>
+    <img alt="Vue logo" src="./assets/titre.jpg" height="120px" />
+    <h1>Toute l'actualité du musicien Sébastien Velly</h1>
   </header>
   <main>
     <TabList />
@@ -37,12 +37,13 @@ header::after {
   position: absolute;
   left: 1rem;
   bottom: 0;
-  width: 25%;
+  width: 132px;
   border-bottom: 1px solid white;
 }
 
 h1 {
   margin: 0;
+  font-size: 1.2rem;
 }
 
 main {
@@ -59,5 +60,11 @@ main::before {
   width: 1rem;
   border-left: 5px solid white;
   border-right: 5px solid white;
+}
+
+@media (min-width: 770px) {
+  main {
+    height: calc(100vh - 120px);
+  }
 }
 </style>
