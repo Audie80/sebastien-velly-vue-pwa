@@ -1,26 +1,63 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <header>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <h1>Sébastien Velly</h1>
+  </header>
+  <main>
+    <TabList />
+  </main>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
+<script setup>
+import TabList from "./components/TabList.vue";
 </script>
 
 <style>
-#app {
+body {
+  margin: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-right: 1rem;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  bottom: 0;
+  width: 25%;
+  border-bottom: 1px solid white;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  left: 1rem;
+  height: 100%;
+  width: 1rem;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
 }
 </style>
