@@ -221,7 +221,8 @@ window.addEventListener("load", function () {
 }
 
 h2 {
-  font-size: 1rem;
+  margin: 5px 1rem 5px 2.4rem;
+  font-size: 0.7rem;
 }
 
 [role="tab"] {
@@ -230,29 +231,40 @@ h2 {
   z-index: 2;
   overflow: hidden;
   width: 33%;
-  height: 6rem;
+  height: 2rem;
   padding: 0;
+  padding-left: 1.6rem;
   color: white;
+  font-size: 0.6rem;
   border: 1px solid transparent;
   background-color: transparent;
   cursor: pointer;
+  transition: color 0.5s, border 0.5s;
 }
 
-[role="tab"]:not(:first-child)::before {
+[role="tab"]::before {
   content: "";
   position: absolute;
   z-index: 5;
-  left: 1rem;
+  left: 0.45rem;
   top: 0;
-  height: 90%;
-  width: 1rem;
-  border-left: 5px solid grey;
-  border-right: 5px solid grey;
+  height: 100%;
+  width: 0.65rem;
+  border-left: 3.4px solid grey;
+  border-right: 3.4px solid grey;
+  transition: border 0.5s;
+}
+
+[role="tab"][aria-selected="true"]::before {
+  border-left: 3.4px solid white;
+  border-right: 3.4px solid white;
 }
 
 [role="tab"]:focus span,
-[role="tab"]:hover span {
+[role="tab"]:hover span,
+[role="tab"][aria-selected="true"] span {
   transform: scale(1.2);
+  transition: transform 0.5s;
 }
 
 [role="tab"][aria-selected="true"]:not(:first-child) {
@@ -268,6 +280,9 @@ h2 {
   border-top: 1px solid white;
 }
 
+[role="tab"][aria-selected="false"]:not(:last-child) {
+  border-right: 1px solid grey;
+}
 [role="tab"] span.focus {
   display: inline-block;
   margin: 2px;
@@ -275,7 +290,7 @@ h2 {
 }
 
 [role="tabpanel"] {
-  padding: 5px;
+  padding: 5px 1rem 5px 2.4rem;
   min-height: 10em;
   overflow: auto;
 }
@@ -299,16 +314,24 @@ h2 {
     min-height: 100%;
   }
 
-  .automatic {
+  h2 {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  [role="tablist"] {
     display: flex;
     flex-flow: column;
   }
 
   [role="tab"] {
     width: 6rem;
+    height: 6rem;
+    padding-left: 0;
+    font-size: 0.8rem;
   }
 
-  [role="tab"]:not(:first-child)::before {
+  [role="tab"]::before {
     content: none;
   }
 
@@ -325,6 +348,14 @@ h2 {
   [role="tab"][aria-selected="false"] {
     border-left: 1px solid white;
     border-top: none;
+  }
+
+  [role="tab"][aria-selected="false"]:not(:last-child) {
+    border-right: none;
+  }
+
+  [role="tabpanel"] {
+    padding: 5px 1rem 5px 4.4rem;
   }
 }
 </style>
