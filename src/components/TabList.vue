@@ -214,6 +214,7 @@ window.addEventListener("load", function () {
 <style scoped>
 .tabnav {
   position: fixed;
+  z-index: 10;
   bottom: 0;
   width: 100%;
   min-width: 100%;
@@ -291,10 +292,9 @@ h2 {
 
 [role="tabpanel"] {
   padding: 5px 1rem 5px 2.4rem;
-  min-height: 10em;
+  height: calc(100vh - 80px - 54.8px);
   overflow: auto;
 }
-
 [role="tabpanel"].is-hidden {
   display: none;
 }
@@ -355,7 +355,8 @@ h2 {
   }
 
   [role="tabpanel"] {
-    padding: 5px 1rem 5px 4.4rem;
+    height: 100vh;
+    padding: 5px 0 5px 4.4rem;
   }
 }
 </style>
