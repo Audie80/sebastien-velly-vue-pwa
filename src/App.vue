@@ -13,6 +13,12 @@ import TabList from "./components/TabList.vue";
 </script>
 
 <style>
+html,
+body,
+#app {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -52,7 +58,7 @@ h1 {
 
 main {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 80px - 54.8px);
 }
 
 main::before {
@@ -60,10 +66,14 @@ main::before {
   position: absolute;
   z-index: 5;
   left: 0.6rem;
-  height: calc(100% - 7rem);
+  height: 100%;
   width: 0.65rem;
   border-left: 3.4px solid white;
   border-right: 3.4px solid white;
+}
+
+p {
+  font-size: 11px;
 }
 
 @media (min-width: 770px) {
@@ -81,7 +91,7 @@ main::before {
   }
 
   main {
-    height: calc(100vh - 120px);
+    height: 100vh;
   }
 
   main::before {
@@ -90,6 +100,10 @@ main::before {
     height: 100%;
     border-left: 7px solid white;
     border-right: 7px solid white;
+  }
+
+  p {
+    font-size: 14px;
   }
 }
 </style>
