@@ -30,20 +30,36 @@ onMounted(() => {
 });
 
 async function fetchData() {
-  await fetch(
-    `https://youtube.googleapis.com/youtube/v3/search?part=id&channelId=UCmevOXVyh-LCV5Km0Uc3hZg&maxResults=9&order=date&type=video&videoEmbeddable=true&key=${process.env.VUE_APP_YOUTUBE_API}`,
-    {
-      method: "GET",
+  try {
+    const youtubeUrl =
+      "https://youtube.googleapis.com/youtube/v3/search?part=id&channelId=UCmevOXVyh-LCV5Km0Uc3hZg&maxResults=9&order=date&type=video&videoEmbeddable=true&key=" +
+      process.env.VUE_APP_YOUTUBE_API;
+    const response = await fetch(youtubeUrl);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
-  )
-    .then((response) => {
-      response.json().then((data) => {
-        videos.value = data.items;
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+    const data = await response.json();
+    console.log("Données récupérées de l'api Youtube");
+    videos.value = data.items;
+  } catch (error) {
+    console.error("Error fetching data from API:", error);
+    // Si l'appel API échoue, chargez les données à partir du fichier JSON de secours
+    loadJSONData();
+  }
+}
+
+async function loadJSONData() {
+  try {
+    const response = await fetch("/youtube.json");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const jsonData = await response.json();
+    console.log("Données récupérées du fichier JSON de secours");
+    videos.value = jsonData.items;
+  } catch (error) {
+    console.error("Error loading JSON data:", error);
+  }
 }
 </script>
 

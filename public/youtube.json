@@ -1,0 +1,84 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "e1X0od8xQSZsicNKAHflYv-cYUg",
+    "nextPageToken": "CAkQAA",
+    "regionCode": "FR",
+    "pageInfo": {
+        "totalResults": 38,
+        "resultsPerPage": 9
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "J9aZEdClId8q5C7xkpZacEhE2Pk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "pJxpesU55sY"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "2V4HUq6y86Bo6eH3rUaK3-xmRMI",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Kt1st3gR2Yo"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "w-KTRRIZyq4HlK8Omw26uVfMvNc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ZGSFzGS0z3s"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "PiLXHXT76AUCQTW7Zkoqd7eeCXA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Jf8B6kN-_EM"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "nLXcxf2rwEaTb9NFUzePOoC4q_0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "aRezsNJxGQE"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "uOU4llbDKxcIyqIUwYH_BiCFLQE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "TahUGKAVxnk"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "MS9DuTm6p2xmKJmmUm7ZzD2JZ3c",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "kUAwPgLhttY"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "JtB-d8ybWClEoFkdpm_gcIM4Jvw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Ti-Wo3C4dfk"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "nrtt0VOxldiX04o4vtB079YuCXE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "BvNxN4rTjow"
+            }
+        }
+    ]
+}
